@@ -1,1 +1,61 @@
+Executive Summary
+
+This report documents a complete Security Operations Center (SOC) investigation workflow, simulating adversary activity against a Windows endpoint within a controlled, isolated laboratory environment.
+The investigation encompassed network reconnaissance, service enumeration, SMB discovery, authentication testing, file access analysis, and security event investigation. The simulated attack activity originated from a Kali Linux machine directed against a Windows 10 endpoint, which was monitored through host-based security logging and SIEM capabilities.
+The objective of the engagement was to identify attacker behavior, collect and preserve security evidence, analyze Indicators of Compromise (IOCs), map observed activity to the MITRE ATT&CK framework, and produce actionable security recommendations.
+The investigation successfully demonstrated the end-to-end process by which a SOC analyst detects and investigates suspicious network activity, unauthorized authentication attempts, and potential lateral movement technique
+
+
+Objective
+
+The objectives of this investigation were to:
+Perform reconnaissance against a Windows endpoint.
+Identify exposed network services.
+Analyze SMB-based attack activity.
+Simulate authentication attempts.
+Collect Windows security evidence.
+Investigate suspicious login activity.
+Map attacker techniques to the MITRE ATT&CK framework.
+Develop detection and remediation recommendations.
+
+
+
+
+Investigation Methodology
+
+The investigation followed a structured SOC incident response methodology, consisting of the following phases:
+Reconnaissance
+Service Enumeration
+Authentication Analysis
+Attack Simulation
+Log Collection
+Threat Analysis
+MITRE ATT&CK Mapping
+Remediation Planning
+
+Lab Architecture
+
+The SOC laboratory environment consisted of the following components:
+Kali Linux — acting as the attacker simulation machine.
+Windows 10 endpoint — acting as the monitored target system.
+Wazuh SIEM — collecting and analyzing security events.
+
+Log sources and network recon 
+
+Network reconnaissance was performed using Nmap, revealing open ports 135 (MSRPC), 139 (NetBIOS), and 445 (SMB) on the Windows target.
+The presence of SMB on port 445 indicated a potential attack surface for enumeration and credential-based attacks.
+This finding guided further investigation using tools like enum4linux, smbclient, and Hydra.
+
+## Identified Indicators
+
+| Indicator | Type | Description |
+|-----------|------|-------------|
+| 192.168.56.105 | IP Address | Attacker source |
+| TCP/445 | Network Indicator | SMB communication |
+| ammy | Account | Accessed account |
+| secret.txt | File Artifact | Accessed file |
+
+
+
+
 
