@@ -1,1 +1,20 @@
 
+# DevShieldX SOC Capstone
+# Network Reconnaissance Commands
+
+# Identify open ports and services
+nmap -A 192.168.56.108
+
+# SMB enumeration
+enum4linux -a 192.168.56.108
+
+# SMB connection testing
+smbclient -L //192.168.56.108
+
+# SSH connection test
+ssh ammy@192.168.56.108
+
+# File transfer
+scp ammy@192.168.56.108:/path/to/secret.txt 
+
+get secret.txt
