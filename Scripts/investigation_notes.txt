@@ -1,0 +1,9 @@
+
+Investigation Timeline:
+
+1. Nmap scan identified exposed services.
+2. SMB service was discovered on TCP/445.
+3. Enumeration was performed using enum4linux.
+4. SSH access was tested.
+5. secret.txt file was identified and transferred.
+6. Evidence was collected for SOC reporting.
